@@ -60,7 +60,7 @@ namespace CinamaPriceCalculater
 
         }
 
-     
+
 
         private static int getPersonPrice()
         {
@@ -84,9 +84,9 @@ namespace CinamaPriceCalculater
 
         private static void getGroupPrice()
         {
-            int numOfPersons,personAge , groupPrice = 0;
+            int numOfPersons, personAge, groupPrice = 0;
             numOfPersons = int.Parse(Console.ReadLine());
-           
+
             for (int i = 0; i < numOfPersons; i++)
             {
                 Console.WriteLine("Enter person age :\n");
@@ -104,14 +104,24 @@ namespace CinamaPriceCalculater
                 Console.Write($"{i}.{text}");
             }
             Console.WriteLine();
-            
+
         }
 
 
         private static void getThirdWord()
         {
             string text = Util.AskForString("Text");
+            var textParts = text.Split(' ');
+            if (textParts.Length < 3)
+            {
+                Console.WriteLine("Please enter a text with minimun 3 words ");
+                getThirdWord();
+            }
+            else
+            {
+                Console.WriteLine($" The third word you entered is :{textParts[2]}\n");
 
+            }
         }
     }
 }
