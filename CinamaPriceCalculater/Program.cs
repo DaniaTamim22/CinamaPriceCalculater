@@ -13,7 +13,7 @@ namespace CinamaPriceCalculater
             {
 
                 MenuHelpers.ShowMainMenu();
-                int input = int.Parse(Console.ReadLine());
+                uint input = Util.AskForUInt("Enter your choice");
                 int ticketPrice = 0;
                 switch (input)
                 {
@@ -65,9 +65,13 @@ namespace CinamaPriceCalculater
         private static int getPersonPrice()
         {
             int personPrice = 0;
-            int age = 0;
-            age = int.Parse(Console.ReadLine());
-            if (age > 64)
+            uint age = 0;
+            age = Util.AskForUInt("Age");
+            if (age < 5 || age > 100)
+            {
+                personPrice = 0;
+            }
+            else if (age > 64)
             {
                 personPrice = 90;
             }

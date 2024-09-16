@@ -25,5 +25,23 @@
 
             return answer;
         }
+
+        public static uint AskForUInt(string prompt)
+        {
+            do
+            {
+                string input = AskForString(prompt);
+                if (uint.TryParse(input, out uint result))
+                {
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine($"Please enter a valid {prompt}");
+                }
+
+
+            } while (true);
+        }
     }
 }
