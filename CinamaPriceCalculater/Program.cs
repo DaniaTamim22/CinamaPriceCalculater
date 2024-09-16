@@ -88,8 +88,9 @@ namespace CinamaPriceCalculater
 
         private static void getGroupPrice()
         {
-            int numOfPersons, groupPrice = 0;
-            numOfPersons = int.Parse(Console.ReadLine());
+            uint numOfPersons = 0;
+            int groupPrice = 0;
+            numOfPersons = Util.AskForUInt("Num of Persons");
 
             for (int i = 0; i < numOfPersons; i++)
             {
