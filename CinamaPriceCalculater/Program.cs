@@ -74,6 +74,17 @@ namespace CinamaPriceCalculater
 
         private static void getGroupPrice()
         {
+            int numOfPersons,personAge , groupPrice = 0;
+            numOfPersons = int.Parse(Console.ReadLine());
+           
+            for (int i = 0; i < numOfPersons; i++)
+            {
+                Console.WriteLine("Enter person age :\n");
+                groupPrice += getPersonPrice();
+
+            }
+            Console.WriteLine($"Your Group have {numOfPersons} persons \n Total Price is : {groupPrice} KR \n");
+
         }
 
 
