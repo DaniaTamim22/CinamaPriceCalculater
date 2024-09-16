@@ -35,7 +35,18 @@ namespace CinamaPriceCalculater
                             getGroupPrice();
                             break;
                         }
-
+                    case MenuHelpers.repeateTenTimes:
+                        {
+                            MenuHelpers.ShowRepeatTenTimesMenu();
+                            getTenTimes();
+                            break;
+                        }
+                    case MenuHelpers.thirdWord:
+                        {
+                            MenuHelpers.ShowGetThirdWordMenu();
+                            getThirdWord();
+                            break;
+                        }
                     default:
                         {
                             Console.WriteLine("You Entered Unvalid Number!! Please Enter a number from the menu below :\n");
@@ -49,8 +60,7 @@ namespace CinamaPriceCalculater
 
         }
 
-
-
+     
 
         private static int getPersonPrice()
         {
@@ -86,16 +96,22 @@ namespace CinamaPriceCalculater
             Console.WriteLine($"Your Group have {numOfPersons} persons \n Total Price is : {groupPrice} KR \n");
 
         }
-
-
-        private static int calculateGroupPrice(int numOfPersons)
+        private static void getTenTimes()
         {
-            int groupPrice = 0;
-            for (int i = 0; i < numOfPersons; i++)
+            string text = Util.AskForString("Text");
+            for (int i = 1; i <= 10; i++)
             {
-
+                Console.Write($"{i}.{text}");
             }
-            return groupPrice;
+            Console.WriteLine();
+            
+        }
+
+
+        private static void getThirdWord()
+        {
+            string text = Util.AskForString("Text");
+
         }
     }
 }
